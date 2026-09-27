@@ -8,7 +8,7 @@ use std::{
 const HOST: &str = "www.baidu.com";
 const PORT: u16 = 443;
 
-const INTERVAL: Duration = Duration::from_secs(2);
+const INTERVAL: Duration = Duration::from_secs(5);
 const CONNECT_TIMEOUT: Duration = Duration::from_secs(5);
 
 // 连接成功后保持一段时间，便于在 /proc/net/tcp 中观察。
@@ -63,7 +63,7 @@ fn main() -> io::Result<()> {
             }
         }
 
-        // 尽量让每次连接的开始时间间隔接近 2 秒。
+        // 尽量让每次连接的开始时间间隔接近 5 秒。
         next_start += INTERVAL;
 
         let now = Instant::now();
